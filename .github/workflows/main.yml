@@ -25,11 +25,17 @@ jobs:
     - name: retrieve the model
       run: az ml model download -t "." --model-id "roberta-sequence:1"
     
+    - name: auth to docker hub
+      uses: docker/login-avtion@v1
+      with:
+        username: ${{ secrets.DOCKERHUB_USERNAME }}
+        password: ${{ secrets.DOCKERHUB_TOKEN }}
+
     - name: build flask-app container
       uses: docker/build-push-action@v2
       with:
         context: ./
         file: ./Dockerfile
-        push: false
+        push: true
         tags: ${{ secrets.DOCKERHUB_REPO }}:latest
   
