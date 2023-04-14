@@ -19,7 +19,7 @@ jobs:
     - name: set auto-install of extensions
       run: |
         az config set extension.use_dynamic_install=yes_without_prompt
-        az extension add -n azure-cli-ml
+        az extension add -n ml
     
     - name: attach workspace
       run: az ml folder attach -w "pmlops" -g "skinnerexp-rg"
