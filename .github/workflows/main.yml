@@ -18,12 +18,14 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: set auto-install of extensions
       run: |
+        az version
         az upgrade
+        az version
         az extension remove -n azure-cli-ml
         az extension remove -n ml
         az extension add -n ml
         az extension update -n ml
-        az config set extension.use_dynamic_install=yes_without_prompt
+        az config set auto-upgrade.enable=yes
     
     #- name: attach workspace
     #  run: az ml folder attach -w "pmlops" -g "skinnerexp-rg"
