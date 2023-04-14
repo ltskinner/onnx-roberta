@@ -19,6 +19,7 @@ jobs:
     - name: set auto-install of extensions
       run: |
         az upgrade
+        az extension add -n ml
         az config set extension.use_dynamic_install=yes_without_prompt
     
     - name: attach workspace
