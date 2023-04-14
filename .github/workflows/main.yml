@@ -22,8 +22,6 @@ jobs:
         az upgrade
         az version
 
-        az extension remove -n azure-cli-ml
-        az extension remove -n ml
         az extension add -n ml
         az extension update -n ml
     
