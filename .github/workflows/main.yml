@@ -22,8 +22,8 @@ jobs:
         az extension add -n ml
         az config set extension.use_dynamic_install=yes_without_prompt
     
-    - name: attach workspace
-      run: az ml folder attach -w "pmlops" -g "skinnerexp-rg"
+    #- name: attach workspace
+    #  run: az ml folder attach -w "pmlops" -g "skinnerexp-rg"
     
     - name: retrieve the model
       run: az ml model download -t "." --model-id "roberta-sequence:1"
