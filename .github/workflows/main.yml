@@ -30,6 +30,8 @@ jobs:
         az ml model download --name roberta-sequence --version 1 --download-path "." --resource-group skinnerexp-rg --workspace-name pmlops
         pwd
         ls -la
+        cd roberta-sequence
+        ls -la
 
     - name: auth to docker hub
       uses: docker/login-action@v1
