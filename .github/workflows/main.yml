@@ -26,7 +26,7 @@ jobs:
     #  run: az ml folder attach -w "pmlops" -g "skinnerexp-rg"
     
     - name: retrieve the model
-      run: az ml model download -n roberta-sequence -v 1 -w pmlops
+      run: az ml model download --name roberta-sequence --version 1 -wworkspace-name pmlops
     
     - name: auth to docker hub
       uses: docker/login-action@v1
