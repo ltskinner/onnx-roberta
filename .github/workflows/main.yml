@@ -27,9 +27,9 @@ jobs:
 
     - name: retrieve the model
       run: |
-        az ml model download --name roberta-sequence --version 1 --download-path "./" --resource-group skinnerexp-rg --workspace-name pmlops
+        az ml model download --name roberta-sequence --version 1 --download-path "." --resource-group skinnerexp-rg --workspace-name pmlops
         pwd
-        ls
+        ls -la
 
     - name: auth to docker hub
       uses: docker/login-action@v1
