@@ -29,7 +29,10 @@ run-app:
 docker-build:
 	docker build -t ltskinner/onnx-roberta:latest .
 
-docker-run:
+docker-run-it-rm:
+	docker run -it -p 5000:5000 --rm ltskinner/onnx-roberta
+
+docker-run-detach:
 	# on everything holy
 	# 80:8000 grabs an app running on 8000 forwards to container 80
 	docker run -d --name oxra -p 5000:5000 ltskinner/onnx-roberta
