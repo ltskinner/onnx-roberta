@@ -1,5 +1,5 @@
 # locals
-roberta-sequence-classification-9.onnx
+*.onnx
 
 
 # Byte-compiled / optimized / DLL files
